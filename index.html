@@ -854,9 +854,16 @@ function renderTrial(area, weekNum, day, week){
     </div>` : ''}
 
     <div class="story-panel">
-      ${typeof TAMA_BASIC !== 'undefined' ? `
+      ${currentTerm === 'polynesian-migration' && typeof TAMA_BASIC !== 'undefined' ? `
       <div class="tama-portrait"><img src="${day === 'Tuesday' ? TAMA_TUESDAY : day === 'Wednesday' ? TAMA_WEDNESDAY : day === 'Thursday' ? TAMA_THURSDAY : day === 'Friday' ? TAMA_FRIDAY : TAMA_BASIC}" alt="Tama"></div>` : ''}
-      <span class="story-label">Tama\'s Journal</span>
+      <span class="story-label">${(function(){
+        const speakerMap = window.ALL_STORY_SPEAKERS && window.ALL_STORY_SPEAKERS[currentTerm];
+        const speaker = speakerMap && speakerMap[weekNum] && speakerMap[weekNum][day];
+        if(speaker === 'Tapiwa') return `Tapiwa\\'s story`;
+        if(speaker === 'Nomvula') return `Nomvula\\'s story`;
+        if(speaker === 'Both') return `Tapiwa & Nomvula\\'s story`;
+        return `Tama\\'s Journal`;
+      })()}</span>
       ${t.story}
     </div>
 

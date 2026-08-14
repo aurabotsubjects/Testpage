@@ -440,6 +440,21 @@ const TERM3_DATA = {
 }
 
 
+// Who is "telling" each day's story beat — used by index.html to label the story panel
+// as "Tapiwa's story", "Nomvula's story", or "Tapiwa & Nomvula's story" instead of a
+// generic label, based on the actual dialogue attribution in each day's `story` text above.
+window.ALL_STORY_SPEAKERS = window.ALL_STORY_SPEAKERS || {};
+window.ALL_STORY_SPEAKERS['skybound-baobab-route'] = {
+  1: { Monday: 'Tapiwa', Tuesday: 'Tapiwa', Wednesday: 'Tapiwa', Thursday: 'Tapiwa', Friday: 'Tapiwa' },
+  2: { Monday: 'Tapiwa', Tuesday: 'Tapiwa', Wednesday: 'Tapiwa', Thursday: 'Tapiwa', Friday: 'Tapiwa' },
+  3: { Monday: 'Both', Tuesday: 'Tapiwa', Wednesday: 'Tapiwa', Thursday: 'Tapiwa', Friday: 'Nomvula' },
+  4: { Monday: 'Tapiwa', Tuesday: 'Tapiwa', Wednesday: 'Both', Thursday: 'Tapiwa', Friday: 'Nomvula' },
+  6: { Monday: 'Both', Tuesday: 'Nomvula', Wednesday: 'Tapiwa', Thursday: 'Tapiwa', Friday: 'Nomvula' },
+  7: { Monday: 'Nomvula', Tuesday: 'Nomvula', Wednesday: 'Nomvula', Thursday: 'Nomvula', Friday: 'Nomvula' },
+  8: { Monday: 'Tapiwa', Tuesday: 'Tapiwa', Wednesday: 'Tapiwa', Thursday: 'Tapiwa', Friday: 'Nomvula' },
+  9: { Monday: 'Both', Tuesday: 'Tapiwa', Wednesday: 'Tapiwa', Thursday: 'Tapiwa', Friday: 'Nomvula' },
+};
+
 // Register this topic into the shared app registry
 window.ALL_TERMS = window.ALL_TERMS || {};
 window.ALL_TERMS['skybound-baobab-route'] = {
